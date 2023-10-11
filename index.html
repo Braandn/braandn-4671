@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Bot - Policy</title>
+    <style>
+        body {
+            background-color: #1e2124;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: white;
+            border: 2px solid white;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: white;
+            color: #1e2124;
+        }
+
+        .content-box {
+            display: none;
+            width: 60%;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid white;
+            background-color: #424549;
+            text-align: left;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .content-box:hover {
+            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+    </style>
+    <script>
+        function showContent(id) {
+            const boxes = document.querySelectorAll('.content-box');
+            boxes.forEach(box => {
+                box.style.display = 'none';
+            });
+            document.getElementById(id).style.display = 'block';
+        }
+
+        function handleHashChange() {
+            if(location.hash === "#privacy-policy") {
+                showContent('privacy-policy');
+            } else if(location.hash === "#terms-of-service") {
+                showContent('terms-of-service');
+            }
+        }
+
+        window.addEventListener('load', handleHashChange);
+        window.addEventListener('hashchange', handleHashChange);
+    </script>
+</head>
+<body>
+
+<div class="navbar">
+    <a href="#" onclick="showContent('terms-of-service')">Terms of Service</a>
+    <a href="#" onclick="showContent('privacy-policy')">Privacy Policy</a>
+</div>
+
+<div class="content-box" id="terms-of-service">
+    <h2>Terms of Service for braandn#4671 (Discord Bot)</h2>
+    <p>By using this bot, you agree to the following terms:</p>
+    <ul>
+        <li>The bot is provided "as is", without warranty of any kind.</li>
+        <li>You agree not to misuse or abuse the bot's functionalities.</li>
+        <li>The bot owner reserves the right to change, modify, or remove any feature without prior notice.</li>
+    </ul>
+    <p>These terms can be updated at any time, and it's the user's responsibility to stay informed about any changes.</p>
+</div>
+
+<div class="content-box" id="privacy-policy">
+    <h2>Privacy Policy for braandn#4671 (Discord Bot)</h2>
+    <p>We value your privacy and ensure that your data is protected.</p>
+    <ul>
+        <li><strong>Sent Messages:</strong> For the purpose of our leveling system, every message you send in this server is registered. This does not mean the bot is storing the content of your messages, but rather the act of sending a message is noted for points accumulation.</li>
+        <li><strong>Time Spent in Voice Channels:</strong> If you spend time in any voice channel, it's counted towards our leveling system. If you're in the AFK channel, this time is excluded and not tracked.</li>
+        <li><strong>Interactions on the Server:</strong> Every interaction you make on our server, including reactions to messages and clicks on buttons, may be tracked by the bot. In some cases, this can count towards the leveling system.</li>
+        <li><strong>Commands:</strong> Each command you input into the server is noted to monitor and ensure the bot is functioning correctly and to analyze which commands are most popular or if any need adjustments.</li>
+        <li>We do not share or sell any data with third parties.</li>
+    </ul>
+    <p>If you have any concerns about your privacy, please reach out to us.</p>
+</div>
+
+</body>
+</html>
